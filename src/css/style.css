@@ -1,0 +1,347 @@
+* {
+  box-sizing: border-box;
+}
+.nav__menu-mobile-btn {
+  display: none;
+}
+
+body {
+  font-family: "Drive";
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  background: url("/src/images/background.png") repeat;
+}
+
+.nav__header {
+  float: left;
+  display: inline;
+}
+
+.nav__title {
+  display: inline-block;
+  font-size: 22px;
+  padding: 0px 10px 10px 10px;
+}
+
+.nav__links {
+  display: flex;
+  justify-content: center;
+  padding-top: 1em;
+  font-size: 0.9em;
+  color: #fff;
+  text-transform: uppercase;
+  line-height: 3em;
+  margin-bottom: 3em;
+}
+
+.nav__links-buttons {
+  display: inline-block;
+  padding: 13px 10px 13px 10px;
+  height: 2em;
+  padding: 1em;
+  margin: 0 0.5em 0.5em 0;
+  font-size: 0.8rem;
+  line-height: 0.2em;
+  color: #5a4a4a;
+  text-align: center;
+  border-radius: 2px;
+  text-decoration: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.nav__links-buttons:hover {
+  color: white;
+  background-color: #5a4a4a;
+}
+.links-buttons--selected {
+  color: white;
+  background-color: #5a4a4a;
+  font-weight: bold;
+}
+
+/* 
+  * Hide field input
+  */
+#nav__check {
+  display: none;
+}
+.nav__menu-icon {
+  display: none;
+  width: 3em;
+  height: 3em;
+  margin-bottom: 5px;
+  border-radius: 3px;
+}
+.nav__menu-close {
+  display: none;
+  width: 1.5em;
+  height: 1.5em;
+  margin-bottom: 5px;
+  border-radius: 3px;
+}
+
+.main {
+  display: flex;
+  width: 90%;
+  margin: auto;
+  flex-direction: column;
+}
+
+.article {
+  display: flex;
+  width: 100%;
+  max-width: 900px;
+  margin: auto;
+  background-color: lime;
+  margin-bottom: 2em;
+}
+.article .article__image {
+  object-fit: cover;
+}
+.article .article__content {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 100%;
+  padding: 1em 2em 1em 2em;
+  background-color: white;
+}
+/* 
+* Article Text
+* 
+*/
+
+.article__time,
+.article__title,
+.article__category {
+  text-transform: uppercase;
+  color: #5a4a4a;
+}
+
+.article__time,
+.article__category,
+.aside__link {
+  font-family: "WeDrive";
+}
+
+.article__time {
+  font-size: 0.8em;
+  font-weight: 300;
+  margin-left: auto;
+}
+
+.article__title,
+.article__text {
+  padding-right: 2em;
+}
+
+.article_title {
+  font-size: 1.4em;
+  font-weight: 900;
+  line-height: 20px;
+  margin-bottom: -0.2em;
+}
+
+.article__text {
+  font-size: 0.8em;
+  font-weight: 300;
+  line-height: 20px;
+  color: #615c5c;
+}
+.article__footer {
+  display: flex;
+  justify-content: space-between;
+}
+.article__categories {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: 1em;
+}
+.article__category {
+  height: 1.5em;
+  padding: 0.8em;
+  margin: 0 0.5em 0.5em 0;
+  font-size: 0.7em;
+  line-height: 1px;
+  text-align: center;
+  border-radius: 2px;
+  text-decoration: none;
+  cursor: pointer;
+  background-color: rgb(241, 241, 241);
+}
+
+.article__social-links {
+  display: flex;
+  flex-wrap: nowrap;
+  margin-left: auto;
+}
+.article__social-icon {
+  background-color: rgb(221, 221, 221);
+  height: 1.5em;
+  margin-left: 0.5em;
+
+  border-radius: 50%;
+  cursor: pointer;
+  -webkit-transition: all 250ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -o-transition: all 250ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: all 250ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.article__social-icon:hover {
+  background-color: #5a4a4a;
+  color: white;
+  -webkit-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  transform: scale(1.2);
+}
+.aside {
+  display: flex;
+  width: 90%;
+  margin: 2em auto;
+  justify-content: center;
+}
+.aside__link {
+  height: 2em;
+  padding: 1em;
+  margin: 0 0.5em 0.5em 0;
+  font-size: 0.9rem;
+  line-height: 0.2em;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  border-radius: 2px;
+  text-decoration: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  background-color: rgb(160, 160, 160);
+}
+.link--selected {
+  background-color: #5a4a4a;
+  color: white;
+}
+
+footer {
+  border-top: 1px solid #5a4a4a;
+}
+
+/* 
+* Hack Background image as bottom border
+* https://developer.mozilla.org/fr/docs/Web/CSS/background-origin
+*/
+
+article:nth-of-type(odd) {
+  background: url("/src/images/pink-triangle.png") repeat-x bottom padding-box;
+  padding-bottom: 0.68em;
+}
+
+article:nth-of-type(even) {
+  background: url("/src/images/blue-triangle.png") repeat-x bottom padding-box;
+  padding-bottom: 0.68em;
+}
+
+/* 
+* Mobile & Tablet view under 800px
+*/
+
+@media (max-width: 800px) {
+  header {
+    margin-bottom: 4em;
+  }
+  header img {
+    height: 100px;
+  }
+  .nav {
+    height: 50px;
+    width: 100%;
+
+    position: relative;
+    animation: fadeIn ease 0.8s;
+  }
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  .nav__menu-mobile-btn {
+    display: block;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    margin-right: 2em;
+  }
+  .nav__label {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    padding: 13px;
+  }
+  .nav__label:hover {
+    cursor: pointer;
+  }
+
+  .nav__links {
+    position: absolute;
+    display: block;
+    width: 50%;
+    padding-top: 0;
+    margin-right: 2.5em;
+    color: #5a4a4a;
+    background-color: white;
+    transition: all 0.3s ease-in;
+    overflow-y: hidden;
+    top: 50px;
+    right: 0px;
+  }
+
+  .nav__links-buttons {
+    display: block;
+    width: 100%;
+    border-radius: 0px;
+  }
+  #nav__check:not(:checked) ~ .nav__links {
+    height: 0px;
+  }
+  #nav__check:checked ~ .nav__links {
+    overflow-y: hidden;
+  }
+  #nav__check:not(:checked) ~ * .nav__menu-icon {
+    display: block;
+  }
+  #nav__check:checked ~ * .nav__menu-icon {
+    display: none;
+  }
+  #nav__check:checked ~ * .nav__menu-close {
+    display: block;
+  }
+  #nav__check:not(:checked) ~ * .nav__menu-close {
+    display: none;
+  }
+
+  main {
+    width: 90%;
+  }
+
+  article {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    height: 100%;
+    margin-bottom: 2em;
+  }
+  .article-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    padding: 1em;
+    background-color: white;
+  }
+  .content-date {
+    display: block;
+  }
+}
