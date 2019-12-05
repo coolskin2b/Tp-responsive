@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="src/css/normalize.css" />
     <link rel="stylesheet" href="src/css/font.css" />
@@ -10,7 +10,7 @@
     <title>Weblog</title>
   </head>
   <body>
-    <header>
+    <header class="header">
       <nav class="nav">
         <input type="checkbox" id="nav__check" />
         <div class="nav__header">
@@ -53,6 +53,7 @@
       </nav>
     </header>
     <main class="main">
+      <div class="main__breadcrumb">Home > Blog</div>
       <article class="article">
         <img class="article__image" src="src/images/photo1.jpg" alt="" />
         <div class="article__content">
@@ -281,7 +282,18 @@
         <a class="aside__link" href="#">precedent</a>
         <a class="aside__link link--selected" href="#">suivant</a>
       </aside>
-      <footer class="footer"></footer>
+      <footer class="footer">
+        <div class="footer__copyright">
+          <div>Wedrive - © 2019 Tous droits réservés</div>
+          <span class="footer__copyright-subtitle">Design agence wype</span>
+        </div>
+        <div class="footer__nav">
+          <a href="#" class="footer__link">Mentions légales</a>
+          <a href="#" class="footer__link">Conditions générales</a>
+          <a href="#" class="footer__link">Presse</a>
+          <a href="#" class="footer__link">Contact</a>
+        </div>
+      </footer>
     </main>
   </body>
 </html>
