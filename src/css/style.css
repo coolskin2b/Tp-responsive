@@ -105,6 +105,7 @@ footer {
 
 .nav__menu-close,
 .nav__menu-icon {
+  width: 25px;
   display: none;
   margin-bottom: 5px;
   border-radius: 3px
@@ -419,6 +420,23 @@ footer {
     display: block
   }
 
+  /*
+  * FOOTER
+  */
+  .footer {
+    flex-direction: column-reverse;
+  }
+
+  .footer__nav {
+    margin-left: 0;
+  }
+
+  .footer__copyright {
+    margin: 2.5em auto;
+    font-size: 1em;
+  }
+
+  /* FOOTER */
 }
 
 /* 
@@ -432,11 +450,18 @@ footer {
 
   .nav__website-name-mobile {
     display: block;
-    margin: 1em auto
+    position: absolute;
+    top: 40px;
+    left: 89px;
+  }
+
+  .nav__menu-label {
+    font-size: .8em;
+    color: #5a4a4a;
   }
 
   .header {
-    margin-bottom: 4em
+    margin-bottom: 1em;
   }
 
   .header__logo {
@@ -445,7 +470,7 @@ footer {
 
   .nav {
     display: flex;
-    height: 50px;
+    height: 100px;
     width: 100%;
   }
 
@@ -453,7 +478,7 @@ footer {
     display: block;
     position: absolute;
     right: 0;
-    top: 0;
+    top: 5px;
   }
 
   .nav__label {
@@ -468,12 +493,13 @@ footer {
     display: block;
     width: 50%;
     padding-top: 0;
+    padding-right: 1em;
     margin-right: 2.5em;
     color: #5a4a4a;
     background-color: #fff;
     overflow: hidden;
-    /*  position from .nav element size (height =50px)  */
-    top: 50px;
+    /*  position from .nav elements */
+    top: 70px;
     right: 0;
   }
 
@@ -487,13 +513,12 @@ footer {
 
   #nav__check:not(:checked)~.nav__links {
     height: 0
+      /* nav_links re-take  original size when #nav_check is checked. */
   }
 
-  /* Input ckecked  hide overflow 
-  #nav__check:checked~.nav__links {
-    overflow-y: hidden
-  }
-  */
+
+  /* #nav__check:checked~*.nav__links {} */
+
 
   /* Input not checked display hamburger menu */
   #nav__check:not(:checked)~* .nav__menu-icon {
@@ -516,18 +541,4 @@ footer {
   }
 
   /* NAV END */
-
-  /*
-  * FOOTER
-  */
-  .footer {
-    flex-direction: column-reverse;
-  }
-
-  .footer__copyright {
-    margin: 2.5em auto;
-    font-size: 1em;
-  }
-
-  /* FOOTER */
 }
