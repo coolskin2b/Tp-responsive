@@ -1,18 +1,55 @@
-*,
 body {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box
+  font-family: "Drive";
+  font-size: 16px;
+  /* set your base font size for responsive design */
+  font-weight: 500;
+  background: url(/src/images/background.png)
 }
 
-#nav__check,
+/* FONT */
+.nav__website-name-mobile,
+.article__category,
+.article__time,
+.article__title {
+  text-transform: uppercase;
+  color: #5a4a4a
+}
+
+.nav__website-name-mobile,
+.article__category,
+.article__time,
+.aside__link,
+.main__breadcrumb,
+footer {
+  font-family: "WeDrive"
+}
+
+/* FONT END */
+
+/* NAVIGATION > 800px */
+
+/*
+* Hide checkbox input for Menu Open/close 
+* on mobile view
+* 
+*/
+
+#nav__check {
+  display: none;
+}
+
+/* Hide checkbox END */
+
 .nav__menu-mobile-btn {
   display: none
 }
 
-body {
-  font-family: "Drive";
-  font-weight: 500;
-  background: url(/src/images/background.png)
+.nav__website-name-mobile {
+  display: none;
+  font-size: 1.4em;
+  font-weight: 900;
+  line-height: 20px;
+  margin-bottom: .2em
 }
 
 .nav__header {
@@ -43,7 +80,6 @@ body {
 
 .nav__links-buttons {
   display: inline-block;
-  height: 2em;
   padding: 1em;
   margin: 0 .5em .5em 0;
   font-size: .8rem;
@@ -70,8 +106,6 @@ body {
 .nav__menu-close,
 .nav__menu-icon {
   display: none;
-  width: 3em;
-  height: 3em;
   margin-bottom: 5px;
   border-radius: 3px
 }
@@ -80,6 +114,9 @@ body {
   width: 1.5em;
   height: 1.5em
 }
+
+/* NAVIGATION END */
+
 
 .main {
   display: -webkit-box;
@@ -102,17 +139,16 @@ body {
   padding-bottom: .3em
 }
 
+/* ARTICLE > 800 px */
 .article,
 .article .article__content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 100%
 }
 
 .article {
   max-width: 900px;
-  background-color: #0f0;
   margin: auto auto 2em
 }
 
@@ -133,28 +169,12 @@ body {
   background-color: #fff
 }
 
-.article__category,
-.article__time,
-.article__title {
-  text-transform: uppercase;
-  color: #5a4a4a
-}
-
-.article__category,
-.article__time,
-.aside__link,
-.main__breadcrumb,
-footer {
-  font-family: "WeDrive"
-}
-
 .article__time {
   font-size: .8em;
   font-weight: 300;
   margin-left: auto
 }
 
-.article__text,
 .article__title {
   padding-right: 2em
 }
@@ -193,12 +213,9 @@ footer {
 }
 
 .article__category {
-  height: 1.5em;
   padding: .8em;
-  margin: 0 .5em .5em 0;
+  margin: .5em .5em .5em 0;
   font-size: .7em;
-  line-height: 1px;
-  text-align: center;
   border-radius: 2px;
   text-decoration: none;
   cursor: pointer;
@@ -222,7 +239,9 @@ footer {
   cursor: pointer;
   -webkit-transition: all 250ms cubic-bezier(.175, .885, .32, 1.275);
   -o-transition: all 250ms cubic-bezier(.175, .885, .32, 1.275);
-  transition: all 250ms cubic-bezier(.175, .885, .32, 1.275)
+  transition: all 250ms cubic-bezier(.175, .885, .32, 1.275);
+  -moz-transition: all 250ms cubic-bezier(.175, .885, .32, 1.275);
+  -ms-transition: all 250ms cubic-bezier(.175, .885, .32, 1.275);
 }
 
 .article__social-icon:hover {
@@ -233,6 +252,43 @@ footer {
   transform: scale(1.2)
 }
 
+/*
+* Article : Custom bottom decoration.
+*/
+
+.article:nth-of-type(odd) {
+  background-image: url(/src/images/pink-triangle.png);
+
+  /*  repeat background only on horizontal axis */
+  background-repeat: repeat-x;
+  /*  
+  *   property sets the initial position for each background image.
+  *   The position is relative to the position layer set by background-origin.
+  *   https://developer.mozilla.org/en-US/docs/Web/CSS/background-position
+  */
+  background-position: bottom;
+
+  /* padding-box The background is positioned relative to the padding box.*/
+  background-origin: padding-box;
+
+  /* 
+  *  rounded size for background image height 11px  https://www.w3schools.com/tags/ref_pxtoemconversion.asp 
+  *  16px = 1em, 11 px = 0.6875em , 0.69em for rounded value
+  */
+  padding-bottom: .69em
+}
+
+/* shortened version version off code :)*/
+.article:nth-of-type(even) {
+  background: url(/src/images/blue-triangle.png) repeat-x bottom padding-box;
+  padding-bottom: .69em
+}
+
+/* Article : Custom bottom decoration. END /*
+
+/* ARTICLE END */
+
+/* ASIDE > 800px */
 .aside {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -245,14 +301,11 @@ footer {
 }
 
 .aside__link {
-  height: 2em;
-  padding: 1em;
-  margin: 0 .5em .5em 0;
-  font-size: .9rem;
-  line-height: .2em;
-  font-weight: 700;
+  padding: 0.5em;
+  margin: 0 .5em;
   color: #fff;
-  text-align: center;
+  font-size: .9rem;
+  font-weight: 700;
   border-radius: 2px;
   text-decoration: none;
   text-transform: uppercase;
@@ -265,6 +318,10 @@ footer {
   color: #fff
 }
 
+/* ASIDE END */
+
+
+/* FOOTER */
 .footer__copyright,
 .footer {
   display: -webkit-box;
@@ -320,17 +377,15 @@ footer {
   text-decoration: none
 }
 
-.article:nth-of-type(odd) {
-  background: url(/src/images/pink-triangle.png) repeat-x bottom padding-box;
-  padding-bottom: .68em
-}
-
-.article:nth-of-type(even) {
-  background: url(/src/images/blue-triangle.png) repeat-x bottom padding-box;
-  padding-bottom: .68em
-}
+/* FOOTER END */
 
 
+
+/* 
+* TABLET VIEW
+* Image go on top of an article Tablet & Mobile View 
+* (only desktop view >800PX image go on left of the article)
+*/
 @media (max-width:800px) {
   .main {
     width: 90%
@@ -345,6 +400,7 @@ footer {
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
+    /* image go on top of the flexbox */
     height: 100%
   }
 
@@ -368,10 +424,17 @@ footer {
   }
 }
 
-
-
+/* 
+* MOBILE VIEW
+* Replace navigation buttons by Hamburger Menu.
+*/
 
 @media (max-width:640px) {
+  .nav__website-name-mobile {
+    display: block;
+    margin: 1em auto
+  }
+
   .header {
     margin-bottom: 4em
   }
@@ -381,9 +444,9 @@ footer {
   }
 
   .nav {
+    display: flex;
     height: 50px;
     width: 100%;
-    position: relative;
   }
 
   .nav__menu-mobile-btn {
@@ -391,7 +454,6 @@ footer {
     position: absolute;
     right: 0;
     top: 0;
-    margin-right: 2em
   }
 
   .nav__label {
@@ -399,10 +461,6 @@ footer {
     width: 50px;
     height: 50px;
     padding: 13px
-  }
-
-  .nav__label:hover {
-    cursor: pointer
   }
 
   .nav__links {
@@ -413,12 +471,9 @@ footer {
     margin-right: 2.5em;
     color: #5a4a4a;
     background-color: #fff;
-    -webkit-transition: all .3s ease-in;
-    -o-transition: all .3s ease-in;
-    transition: all .3s ease-in;
-    overflow-y: hidden;
+    overflow: hidden;
     top: 50px;
-    right: 0
+    right: 0;
   }
 
   .nav__links-buttons {
@@ -427,26 +482,34 @@ footer {
     border-radius: 0
   }
 
+  /* Input not ckeck hide nav links */
+
   #nav__check:not(:checked)~.nav__links {
     height: 0
   }
 
+  /* Input ckecked  hide overflow 
   #nav__check:checked~.nav__links {
     overflow-y: hidden
   }
+  */
 
+  /* Input not checked display hamburger menu */
   #nav__check:not(:checked)~* .nav__menu-icon {
     display: block
   }
 
+  /* Input not checked hide hamburger menu */
   #nav__check:checked~* .nav__menu-icon {
     display: none
   }
 
+  /* Input checked display Close menu button */
   #nav__check:checked~* .nav__menu-close {
     display: block
   }
 
+  /* Input checked hide Close menu button */
   #nav__check:not(:checked)~* .nav__menu-close {
     display: none
   }
