@@ -419,17 +419,17 @@ footer {
     display: block
   }
 
-  .footer__copyright-subtitle {
-    margin-right: auto;
-  }
 }
 
 /* 
 * MOBILE VIEW
 * Replace navigation buttons by Hamburger Menu.
+* Replace footer flex box flex direction : Column-reverse
 */
 
 @media (max-width:640px) {
+  /* NAV  */
+
   .nav__website-name-mobile {
     display: block;
     margin: 1em auto
@@ -472,6 +472,7 @@ footer {
     color: #5a4a4a;
     background-color: #fff;
     overflow: hidden;
+    /*  position from .nav element size (height =50px)  */
     top: 50px;
     right: 0;
   }
@@ -513,4 +514,20 @@ footer {
   #nav__check:not(:checked)~* .nav__menu-close {
     display: none
   }
+
+  /* NAV END */
+
+  /*
+  * FOOTER
+  */
+  .footer {
+    flex-direction: column-reverse;
+  }
+
+  .footer__copyright {
+    margin: 2.5em auto;
+    font-size: 1em;
+  }
+
+  /* FOOTER */
 }
